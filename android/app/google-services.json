@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86060122080",
+    "project_id": "ownshoppers-d4846",
+    "storage_bucket": "ownshoppers-d4846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86060122080:android:6cc9652ab1c42e510c3585",
+        "android_client_info": {
+          "package_name": "com.bondingitsolutions.ownshoppers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86060122080-giddkgdb3doscq6f91q3u990h4c0af1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzKkPqj3JCcRZcJ9_5vpYfVrPK3dfTk5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86060122080-giddkgdb3doscq6f91q3u990h4c0af1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
