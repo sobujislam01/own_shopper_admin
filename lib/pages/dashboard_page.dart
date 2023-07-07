@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ownshoppers/auth/auth_service.dart';
 import 'package:ownshoppers/pages/login_page.dart';
 import 'package:ownshoppers/pages/new_product.dart';
+import 'package:ownshoppers/pages/product_list.dart';
 import 'package:ownshoppers/provider/product_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -48,7 +49,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
           ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, NewProductPage.routeName),
               child: Text('Add product')),
-          ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),onPressed: (){}, child: Text('View Product')),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
+              onPressed: () => Navigator.pushNamed(context, ProductListPage.routeName),
+              child: Text('View Product')),
           ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),onPressed: (){}, child: Text('View order')),
           ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.red),onPressed: (){}, child: Text('Manage User')),
           ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),onPressed: (){}, child: Text('Catagory')),

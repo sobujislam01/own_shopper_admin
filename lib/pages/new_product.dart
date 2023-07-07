@@ -157,7 +157,7 @@ class _NewProductPageState extends State<NewProductPage> {
                 Card(
                   elevation: 5,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
                     child: Row(
                       children: [
                         TextButton(onPressed: _showDatePickerDilog,
@@ -177,6 +177,7 @@ class _NewProductPageState extends State<NewProductPage> {
       final productModel = ProductModel(
         name: _namecontroller.text,
         price: num.parse(_purchasepricecontroller.text),
+        saleprice: num.parse(_salepricecontroller.text),
         describtion: _describtioncontroller.text,
         catagory: category,
       );

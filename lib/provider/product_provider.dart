@@ -20,14 +20,14 @@ class ProductProvider extends ChangeNotifier{
   }
 
   void getAllProduct() {
-    DBHelper.fetchAllCatagory().listen((event) {
+    DBHelper.fetchAllProduct().listen((event) {
       productList = List.generate(event.docs.length, (index) => ProductModel.formMap(event.docs[index].data()));
       notifyListeners();
     });
   }
 
   void getAllPurchase() {
-    DBHelper.fetchAllCatagory().listen((event) {
+    DBHelper.fetchAllPurchase().listen((event) {
       purchaseList = List.generate(event.docs.length, (index) => PurchaseModel.formMap(event.docs[index].data()));
       notifyListeners();
     });
