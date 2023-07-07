@@ -177,7 +177,7 @@ class _NewProductPageState extends State<NewProductPage> {
       final productModel = ProductModel(
         name: _namecontroller.text,
         price: num.parse(_purchasepricecontroller.text),
-        saleprice: num.parse(_salepricecontroller.text),
+        //saleprice: num.parse(_salepricecontroller.text),
         describtion: _describtioncontroller.text,
         catagory: category,
       );

@@ -9,6 +9,8 @@ class DBHelper {
 
   static FirebaseFirestore _db = FirebaseFirestore.instance;
 
+  static get productId => null;
+
   static Future<void> addNewProduct(ProductModel productModel,PurchaseModel purchaseModel){
     final writeBatch = _db.batch();
     final productDoc = _db.collection(_collectionProduct).doc();
@@ -26,11 +28,25 @@ class DBHelper {
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllCatagory() =>
       _db.collection(_collectionCategory).snapshots();
 
+
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllProduct() =>
       _db.collection(_collectionProduct).snapshots();
 
+  static Stream<DocumentSnapshot<Map<String, dynamic>>> fetchProductbyProductId(String productId) =>
+      _db.collection(_collectionProduct).doc(productId).snapshots();
+
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllPurchase() =>
       _db.collection(_collectionPurchase).snapshots();
+
+  static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllPurchaseByProductId(String productId) =>
+      _db.collection(_collectionPurchase)
+          .where('productId', isEqualTo: productId)
+          .snapshots();
+
+  static Future<void> updateImageUrl(String url, String productId){
+    final doc = _db.collection(_collectionProduct).doc(productId);
+    return doc.update({'image': url});
+  }
 
 
 }

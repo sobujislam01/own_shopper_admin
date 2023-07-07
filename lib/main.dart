@@ -4,6 +4,7 @@ import 'package:ownshoppers/pages/dashboard_page.dart';
 import 'package:ownshoppers/pages/launcher_page.dart';
 import 'package:ownshoppers/pages/login_page.dart';
 import 'package:ownshoppers/pages/new_product.dart';
+import 'package:ownshoppers/pages/product_datel_page.dart';
 import 'package:ownshoppers/pages/product_list.dart';
 import 'package:ownshoppers/provider/product_provider.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           DashBoardPage.routeName : (context) => DashBoardPage(),
           NewProductPage.routeName : (context) => NewProductPage(),
           ProductListPage.routeName : (context) => ProductListPage(),
+          ProductDatelPage.routeName : (context) => ProductDatelPage(),
         },
       ),
     );
