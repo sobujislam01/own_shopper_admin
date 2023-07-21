@@ -102,7 +102,7 @@ class _NewProductPageState extends State<NewProductPage> {
                 ),
                 SizedBox(height: 10,),
                 TextFormField(
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   controller: _describtioncontroller,
                   decoration: InputDecoration(
                       hintText: 'Product Describction'

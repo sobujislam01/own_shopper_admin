@@ -79,13 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 SizedBox(height: 5,),
-                TextButton(
-                    onPressed: (){
-
-                    },
-                    child: Text(
-                        style: TextStyle(color: Colors.red),'Forgot Password?'),
-                ),
                 ElevatedButton(
                     onPressed: _loginAdmin,
                     child: Text('LOGIN')),

@@ -45,7 +45,7 @@ class _ProductDatelPageState extends State<ProductDatelPage> {
           builder: (context ,snapshot){
             if(snapshot.hasData){
               final product = ProductModel.formMap(snapshot.data!.data()!);
-              print(product.productImage);
+              print(product.toString());
               return Stack(
                 children: [
                   ListView(

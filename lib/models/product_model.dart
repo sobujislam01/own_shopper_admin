@@ -1,3 +1,4 @@
+const String pImage = 'image';
 class ProductModel{
   String ? id;
   String ? name;
@@ -24,7 +25,7 @@ class ProductModel{
       'saleprice': saleprice,
       'catagory':catagory,
       'describtion':describtion,
-      'image':productImage,
+       pImage:productImage,
     };
     return map;
 }
@@ -35,7 +36,11 @@ factory ProductModel.formMap(Map<String,dynamic>map) => ProductModel(
   saleprice: map['saleprice'],
   describtion: map['describtion'],
   catagory: map['catagory'],
-  productImage: map['productImage'],
+  productImage: map[pImage],
 );
 
+  @override
+  String toString() {
+    return 'ProductModel{id: $id, name: $name, price: $price, saleprice: $saleprice, describtion: $describtion, catagory: $catagory, productImage: $productImage}';
+  }
 }
