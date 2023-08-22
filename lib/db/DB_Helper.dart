@@ -6,6 +6,7 @@ class DBHelper {
   static const _collectionProduct = 'products';
   static const _collectionCategory = 'catagory';
   static const _collectionPurchase = 'purchase';
+  static const _collectionAdmin = 'Admins';
 
   static FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -25,6 +26,11 @@ class DBHelper {
 
     return writeBatch.commit();
   }
+  static Future<bool> isAdmin(String email) async{
+    final snapshot = await _db.collection(_collectionAdmin).where('email',isEqualTo: email).get();
+    return snapshot.docs.isNotEmpty;
+  }
+
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllCatagory() =>
       _db.collection(_collectionCategory).snapshots();
 

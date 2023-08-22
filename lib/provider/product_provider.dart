@@ -62,7 +62,6 @@ class ProductProvider extends ChangeNotifier{
     }).catchError((error){
 
     });
-    print(snapshot);
     final url = await snapshot.ref.getDownloadURL();
     await updateImageUrl(url, productId);
   }
@@ -70,4 +69,6 @@ class ProductProvider extends ChangeNotifier{
   Future<void> updateImageUrl(String url,String productId){
     return DBHelper.updateImageUrl(url, productId);
   }
+
+  Future<bool>isAdmin(String email) => DBHelper.isAdmin(email);
 }

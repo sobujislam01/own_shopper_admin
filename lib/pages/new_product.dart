@@ -162,7 +162,7 @@ class _NewProductPageState extends State<NewProductPage> {
                       children: [
                         TextButton(onPressed: _showDatePickerDilog,
                             child: Text('Select Parchase Date')),
-                        Text(purchasedate == null ? 'No data chosen' :DateFormat('dd/mm/yy').format(purchasedate!))
+                        Text(purchasedate == null ? 'No data chosen' :DateFormat('dd/MM/yy').format(purchasedate!))
                       ],
                     ),
                 )
@@ -177,7 +177,7 @@ class _NewProductPageState extends State<NewProductPage> {
       final productModel = ProductModel(
         name: _namecontroller.text,
         price: num.parse(_purchasepricecontroller.text),
-        //saleprice: num.parse(_salepricecontroller.text),
+        saleprice: num.parse(_salepricecontroller.text),
         describtion: _describtioncontroller.text,
         catagory: category,
       );

@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ownshoppers/auth/auth_service.dart';
+import 'package:ownshoppers/provider/product_provider.dart';
 import 'package:ownshoppers/utils/constants.dart';
+import 'package:provider/provider.dart';
 
 import 'dashboard_page.dart';
 
@@ -97,7 +99,15 @@ class _LoginPageState extends State<LoginPage> {
       try{
         final uid = await AuthService.loginAdmin(_emailController.text, _passwordController.text);
         if(uid != null){
-          Navigator.pushReplacementNamed(context, DashBoardPage.routeName);
+
+          final isAdmin = await Provider.of<ProductProvider>(context,listen: false).isAdmin(AuthService.currentUser!.email!);
+          if(isAdmin){
+            Navigator.pushReplacementNamed(context, DashBoardPage.routeName);
+          }else{
+            setState(() {
+              _errMsg = 'Your email is not Register as a Admin. Plz  Use the Admin email ';
+            });
+          }
         }
       }on FirebaseAuthException catch (error){
         setState(() {

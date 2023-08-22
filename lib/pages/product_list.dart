@@ -42,7 +42,7 @@ class _ProductListPageState extends State<ProductListPage> {
               onTap:() => Navigator.pushNamed(context, ProductDatelPage.routeName,arguments: [product.id,product.name]),
               title: Text(product.name!),
               subtitle: Text(product.catagory!),
-              trailing: Text('BDT ${product.price}'),
+              trailing: Text('BDT ${product.saleprice}'),
             );
           }
 
